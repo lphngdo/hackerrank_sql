@@ -1,3 +1,4 @@
+/* Option 1: Using the LIKE */
 SELECT DISTINCT CITY
   FROM STATION
  WHERE (
@@ -14,3 +15,9 @@ SELECT DISTINCT CITY
      OR CITY LIKE '%u' 
      OR CITY LIKE '%i'
   );
+
+/* Option 2: Using the IN */
+SELECT DISTINCT CITY
+  FROM STATION
+ WHERE LEFT(CITY, 1) IN ('a', 'o', 'e', 'u', 'i')
+   AND RIGHT(CITY, 1) IN ('a', 'o', 'e', 'u', 'i');
