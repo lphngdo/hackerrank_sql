@@ -26,8 +26,8 @@ SELECT S1.submission_date,
        H.NAME
  FROM (
     SELECT DISTINCT submission_date 
-     FROM submissions
-  ) S1
+      FROM submissions
+  ) AS S1
  LEFT JOIN CTE_Submission_Count AS SC 
  ON S1.submission_date = SC.submission_date
  LEFT JOIN CTE_Top_Hacker AS TH 
