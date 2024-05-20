@@ -15,8 +15,7 @@ CTE_Top_Hacker AS (
     SELECT S2.submission_date,
            S2.hacker_id,
            ROW_NUMBER() OVER (PARTITION BY S2.submission_date ORDER BY COUNT(S2.submission_id) DESC, S2.hacker_id) AS row_number
-      FROM 
-        Submissions AS S2
+      FROM Submissions AS S2
      GROUP BY S2.submission_date, 
               S2.hacker_id
 )
